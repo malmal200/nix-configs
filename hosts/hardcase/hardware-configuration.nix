@@ -44,6 +44,12 @@
   systemd.services.postgresql.requires = [ "var-db-postgres.mount" ];
   systemd.services.postgresql.after = [ "var-db-postgres.mount" ];
 
+  # zfs create -o dedup=off -o mountpoint=legacy -o recordsize=4K  zroot/postgres
+  fileSystems."/zroot/mysql" =
+    { device = "zroot/mysql";
+      fsType = "zfs";
+    };
+
   # zfs create -o mountpoint=legacy  zroot/git
   fileSystems."/zroot/git" =
     { device = "zroot/git";

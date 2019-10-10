@@ -14,5 +14,6 @@ in {
     services.mysql = {
         inherit package;
         enable = true;
+        dataDir = "/zroot/mysql";
     };
 }
