@@ -17,6 +17,7 @@ in {
     ../../services/loki.nix
     ../../services/prometheus.nix
     ../../services/promtail.nix
+    ../../services/mysql.nix
   ];
 
   # This value determines the NixOS release with which your system is to be
