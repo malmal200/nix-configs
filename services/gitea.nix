@@ -6,6 +6,7 @@ let
 
   stateDir = "/var/lib/gitea";
   repositoryRoot = "/zroot/git";
+  tokenPath = "/var/secrets/gitea_token.secret";
 in {
   users.users.git = {
     description = "Service user for gitea";
