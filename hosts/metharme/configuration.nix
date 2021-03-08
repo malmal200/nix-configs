@@ -8,6 +8,7 @@ in {
     ../../services/ssh.nix
     ../../services/bitlbee.nix
     ../../services/ircd
+    ../../services/mysql.nix
   ];
 
   # This value determines the NixOS release with which your system is to be
@@ -25,5 +26,6 @@ in {
     hostName = "metharme";
     hostId = "1f03060e";
     defaultGateway = "192.168.0.254";
+    firewall.allowedTCPPorts = [ 3306 ];
   } // (variables.bondConfig [ "eno1" "eno2" ] "192.168.0.156");
 }
